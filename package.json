@@ -1,0 +1,22 @@
+{
+  "name": "vuelesson",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev":"node scripts/dev.js reactivity -f esm"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.28.0",
+  "dependencies": {
+    "vue": "^3.5.32"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0",
+    "minimist": "^1.2.8",
+    "typescript": "^6.0.3"
+  }
+}
