@@ -27,5 +27,8 @@
         - paths 配置路径别名。你这里表示：当代码里写 @vue/xxx，TS 会把它映射到 packages/xxx/src 去找。
       - 给reactivity项目安装本地的这个依赖@vue/shared   ```pnpm install @vue/shared --workspace --filter @vue/reactivity ```
       - 添加esbuild打包相关配置代码
-2.开始写reactivity模块
+2. 开始写reactivity模块
+     - 防止二次包装，设置一个对象，在触发get时候判断是否可以取到这个对象，如果能取到，证明进入了get，这个对象已经被代理，反之，正常走get
+     - 使用Reflect设置和获取代理对象中的值，防止代理的对象中有getter或setter
+
    
