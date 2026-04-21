@@ -1,4 +1,5 @@
 import { activeEffect } from "./effect";
+import { track } from "./reactiveEffect";
 
 export enum ReactiveFlags{
     IS_REACTIVE = '__v_isReactive'
@@ -11,6 +12,7 @@ export const mutableHandlers:ProxyHandler<any>={
             return true;
         }
         //进行依赖收集
+        track(target,key); //收集这个对象上的属性，和effect关联在一起
         console.log(activeEffect,key);
         
 
